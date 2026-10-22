@@ -1,0 +1,1 @@
+# Training-Physics-Informed-Neural-Networks-Using-Adaptive-Loss-Weighting
