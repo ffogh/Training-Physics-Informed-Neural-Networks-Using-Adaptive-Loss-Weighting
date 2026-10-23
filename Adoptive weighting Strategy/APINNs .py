@@ -1,0 +1,17 @@
+def train_apinn(net, x_f, x_ic, u_ic, x_bc):
+    
+    opt = torch.optim.Adam(net.parameters(), lr=LR)
+    w = torch.ones(3, device=DEVICE)
+
+    for ep in range(EPOCHS):
+        opt.zero_grad()
+        terms = torch.stack(all_losses(net, x_f, x_ic, u_ic, x_bc))
+
+        if ep % APINN_FREQ == 0:
+            L = terms.detach()
+            if L.max() / (L.min() + 1e-12) > 10.0:
+                w = 1.0 + APINN_ALPHA * (L - L.min()) / (L.max() - L.min() + 1e-12)
+
+        (w * terms).sum().backward()
+        opt.step()
+    return net
