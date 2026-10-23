@@ -15,7 +15,7 @@ def train_sapinn(net, x_f, x_ic, u_ic, x_bc):
         opt_net.zero_grad()
         opt_lam.zero_grad()
         loss.backward()
-        for lam in (lam_f, lam_ic, lam_bc):         # flip sign: ascent on weights
+        for lam in (lam_f, lam_ic, lam_bc):         
             lam.grad.neg_()
         opt_net.step()
         opt_lam.step()
