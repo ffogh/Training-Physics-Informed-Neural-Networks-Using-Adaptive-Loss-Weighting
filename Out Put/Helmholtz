@@ -1,0 +1,31 @@
+
+Architecture 4x128  (4 hidden x 128) ===
+  k=8  repeat 1/3
+    Regular PINN   L2RE=2.799e-01  MSE=1.939e-02  (1279.3s)
+    SA-PINNs       L2RE=2.810e-01  MSE=1.955e-02  (1269.0s)
+    APINNs         L2RE=2.802e-01  MSE=1.943e-02  (1275.6s)
+    I-PINN         L2RE=2.726e-01  MSE=1.839e-02  (1268.8s)
+    GW-PINN        L2RE=8.085e+00  MSE=1.618e+01  (1279.3s)
+    VW-PINN        L2RE=2.087e-01  MSE=1.078e-02  (1272.9s)
+    PIPNNs-NTK     L2RE=9.980e-01  MSE=2.465e-01  (2082.3s)
+    DB-PINN        L2RE=2.511e-01  MSE=1.561e-02  (2187.4s)
+    wbPINN         L2RE=2.772e-01  MSE=1.902e-02  (1273.2s)
+  k=8  repeat 2/3
+    Regular PINN   L2RE=1.914e-01  MSE=9.063e-03  (1267.2s)
+    SA-PINNs       L2RE=1.962e-01  MSE=9.529e-03  (1273.9s)
+    APINNs         L2RE=1.918e-01  MSE=9.103e-03  (1284.2s)
+    I-PINN         L2RE=1.971e-01  MSE=9.615e-03  (1268.5s)
+    GW-PINN        L2RE=7.041e+00  MSE=1.227e+01  (1282.5s)
+    VW-PINN        L2RE=2.189e-01  MSE=1.186e-02  (1274.2s)
+    PIPNNs-NTK     L2RE=9.791e-01  MSE=2.373e-01  (2085.9s)
+    DB-PINN        L2RE=1.375e-01  MSE=4.679e-03  (2194.2s)
+    wbPINN         L2RE=1.972e-01  MSE=9.622e-03  (1257.0s)
+  k=8  repeat 3/3
+    Regular PINN   L2RE=1.408e-01  MSE=4.909e-03  (1256.3s)
+    SA-PINNs       L2RE=1.364e-01  MSE=4.602e-03  (1265.6s)
+    APINNs         L2RE=1.374e-01  MSE=4.670e-03  (1258.7s)
+    I-PINN         L2RE=1.395e-01  MSE=4.817e-03  (1256.5s)
+    GW-PINN        L2RE=7.133e+00  MSE=1.259e+01  (1272.4s)
+    VW-PINN        L2RE=1.613e-01  MSE=6.441e-03  (1262.3s)
+    PIPNNs-NTK     L2RE=9.881e-01  MSE=2.417e-01  (2049.5s)
+    DB-PINN        L2RE=6.458e-02  MSE=1.032e-03  (2156.0s)
