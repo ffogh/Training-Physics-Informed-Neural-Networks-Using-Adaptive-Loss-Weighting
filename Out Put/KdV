@@ -1,0 +1,43 @@
+
+Done in 362.1s. Grid 512x500, u in [0.0000, 1.0000]
+Device : cuda:0
+SMOKE  : False
+Epochs : 10000
+Repeats: 3
+Archs  : ['4x128']
+KdV: alpha=1.0, beta=0.0025, domain=[-1.0,1.0]x[0,1.0]
+IC: u(x,0)=A sech^2(k(x-x0)), A=1.0, x0=0.0, k=5.7735
+BC: periodic u, u_x, and u_xx
+
+=== Architecture 4x128  (4 hidden x 128) ===
+  repeat 1/3  (alpha=1.000, beta=0.00250)
+    Regular PINN   L2RE=2.469e-02  MSE=7.004e-05  
+    SA-PINNs       L2RE=3.580e-02  MSE=1.472e-04  
+    APINNs         L2RE=2.020e-02  MSE=4.686e-05  
+    I-PINN         L2RE=1.078e-02  MSE=1.334e-05  
+    GW-PINN        L2RE=1.159e-02  MSE=1.544e-05  
+    VW-PINN        L2RE=1.299e-02  MSE=1.938e-05  
+    PIPNNs-NTK     L2RE=1.039e-02  MSE=1.241e-05  
+    DB-PINN        L2RE=2.140e-02  MSE=5.264e-05  
+    
+  repeat 2/3  (alpha=1.000, beta=0.00250)
+    Regular PINN   L2RE=1.458e-02  MSE=2.442e-05  
+    SA-PINNs       L2RE=1.688e-02  MSE=3.273e-05  
+    APINNs         L2RE=2.422e-02  MSE=6.738e-05  
+    I-PINN         L2RE=9.241e-03  MSE=9.811e-06  
+    GW-PINN        L2RE=2.051e-02  MSE=4.832e-05  
+    VW-PINN        L2RE=1.529e-02  MSE=2.685e-05  
+    PIPNNs-NTK     L2RE=6.288e-02  MSE=4.542e-04  
+    DB-PINN        L2RE=1.617e-01  MSE=3.004e-03  
+   
+  repeat 3/3  (alpha=1.000, beta=0.00250)
+    Regular PINN   L2RE=1.777e-02  MSE=3.626e-05  (1444.3s)
+    SA-PINNs       L2RE=4.504e-02  MSE=2.330e-04  (1335.7s)
+    APINNs         L2RE=9.233e-03  MSE=9.795e-06  (1443.0s)
+    I-PINN         L2RE=2.491e-02  MSE=7.126e-05  (1251.0s)
+    GW-PINN        L2RE=3.352e-02  MSE=1.291e-04  (1375.5s)
+    VW-PINN        L2RE=1.457e-02  MSE=2.439e-05  (1230.9s)
+    PIPNNs-NTK     L2RE=2.240e-02  MSE=5.762e-05  (9819.2s)
+    DB-PINN        L2RE=4.226e-02  MSE=2.052e-04  (7580.5s)
+
+
