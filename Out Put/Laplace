@@ -30,3 +30,9 @@ Device: cpu | SMOKE=False | epochs=10000 | repeats=3
     VW-PINN        L2RE=4.811e-02  MSE=1.828e-04  (2784.4s)
     PIPNNs-NTK     L2RE=1.089e-02  MSE=9.363e-06  (3334.2s)
     DB-PINN        L2RE=2.800e-03  MSE=6.192e-07  (2573.6s)
+
+
+Each repeat is effectively a new experiment with new points, a new boundary coverage
+and a new starting network. A method that is sensitive to any of these, like Regular 
+PINN or DB-PINN , gives quite different
+errors across repeats. Methods like VW-PINN are less affected.
