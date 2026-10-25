@@ -18,3 +18,5 @@ def train_vwpinn(net, x_f, x_ic, u_ic, x_bc):
 
 Our VW-PINN implementation follows the original KDE-based volume-weighting formulation. However, we use Adam instead of the original 
 Adam–L-BFGS training procedure to ensure a consistent comparison across methods. Additionally, KDE bandwidth is selected automatically using Scott's rule. 
+
+wE COULD NOT FIND ANY CODE RELATED.
