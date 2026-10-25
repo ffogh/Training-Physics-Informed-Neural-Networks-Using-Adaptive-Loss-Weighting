@@ -1,6 +1,5 @@
 
 def _flat_grad(loss, params):
-    """Gradient of a scalar loss with respect to all parameters, flattened."""
     grads = torch.autograd.grad(loss, params, retain_graph=True, allow_unused=True)
     return torch.cat([(g if g is not None else torch.zeros_like(p)).flatten()
                       for g, p in zip(grads, params)])
