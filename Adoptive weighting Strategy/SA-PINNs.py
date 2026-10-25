@@ -72,4 +72,6 @@ def train_sapinn(net, x_f, x_ic, u_ic, x_bc):
 
 For a fair comparison across 13 PDE benchmarks, we used a unified Adam-only training protocol for all methods. Although the original SA-PINN paper employed 
 L-BFGS refinement in some experiments, it was not used universally. We therefore omitted L-BFGS for all 
-methods to maintain consistent optimization conditions and computational budgets while preserving their core adaptive weighting mechanisms.
+methods to maintain consistent optimization conditions and computational budgets while preserving their core adaptive weighting mechanisms. The following is from the paper 
+
+''''''''In some case, these are followed by another fixed number of iterations of the L-BFGS quasi-newton method.''''''
