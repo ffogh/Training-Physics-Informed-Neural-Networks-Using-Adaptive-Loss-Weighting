@@ -74,3 +74,5 @@ L-BFGS refinement in some experiments, it was not used universally. We therefore
 methods to maintain consistent optimization conditions and computational budgets while preserving their core adaptive weighting mechanisms. The following is from the paper 
 
 ''''''''In some case, these are followed by another fixed number of iterations of the L-BFGS quasi-newton method.''''''
+
+SA-PINN uses adaptive loss weighting to improve training on challenging PDEs, such as Allen–Cahn.
