@@ -1,3 +1,6 @@
+GW_EPS2 = 0.1    # in the configuration (original PINN-WE value)
+
+
 def train_gwpinn(net, x_f, x_ic, u_ic, x_bc):
 
     opt = torch.optim.Adam(net.parameters(), lr=LR)
@@ -7,18 +10,16 @@ def train_gwpinn(net, x_f, x_ic, u_ic, x_bc):
 
         r, d = residual(net, x_f)
 
-        # Gradient weighting without detach
+        # Gradient weight (no detach, as in the original code)
         w = 1.0 / (GW_EPS2 * (torch.abs(d) - d) + 1.0)
 
         loss = (
-            torch.mean(w * r ** 2)
+            torch.mean((w * r) ** 2)          # weight applied inside the square
             + ic_loss(net, x_ic, u_ic)
             + bc_loss(net, x_bc)
         )
 
         loss.backward()
         opt.step()
-
     return net
-
 # Detachment was tested in some cases, but better results were obtained without it.
