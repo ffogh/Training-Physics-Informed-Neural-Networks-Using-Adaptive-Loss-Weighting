@@ -1,34 +1,68 @@
 
 def train_sapinn(net, x_f, x_ic, u_ic, x_bc):
-    """
-    SA-PINNs: one trainable weight per training point.
 
-    The network minimises the loss while the weights maximise it
-    (gradient ascent), so hard points receive more attention.
-    """
-    lam_f = torch.zeros(N_F, 1, device=DEVICE, requires_grad=True)
-    lam_ic = torch.zeros(N_IC, 1, device=DEVICE, requires_grad=True)
-    lam_bc = torch.zeros(N_BC, 1, device=DEVICE, requires_grad=True)
-    sp = nn.functional.softplus                      # keeps weights positive
+    # 1. Initialize self-adaptive weights
+    col_weights = torch.full(
+        (x_f.shape[0], 1),
+        100.0,
+        device=DEVICE,
+        requires_grad=True
+    )
 
+    u_weights = torch.rand(
+        (x_ic.shape[0], 1),
+        device=DEVICE,
+        requires_grad=True
+    )
+
+    # 2. Initialize optimizers
     opt_net = torch.optim.Adam(net.parameters(), lr=LR)
-    opt_lam = torch.optim.Adam([lam_f, lam_ic, lam_bc], lr=LR)
 
+    opt_col = torch.optim.Adam([col_weights], lr=LR)
+    opt_u = torch.optim.Adam([u_weights], lr=LR)
+
+    # 3. Training
     for _ in range(EPOCHS):
-        r, _ = residual(net, x_f)
-        e_ic = (net(x_ic) - u_ic) ** 2
-        e_bc = net(x_bc) ** 2
-        loss = (torch.mean(sp(lam_f) * r ** 2)
-                + torch.mean(sp(lam_ic) * e_ic)
-                + torch.mean(sp(lam_bc) * e_bc))
 
+        # Calculate PDE residual
+        r, _ = residual(net, x_f)
+
+        # Calculate IC error
+        e_ic = net(x_ic) - u_ic
+
+        # Calculate BC error (zero Dirichlet BC)
+        e_bc = net(x_bc)
+
+        # 4. Apply self-adaptive weights
+        mse_f = torch.mean((col_weights * r) ** 2)
+
+        mse_ic = torch.mean((u_weights * e_ic) ** 2)
+
+        # Original implementation: BC has no adaptive weights
+        mse_bc = torch.mean(e_bc ** 2)
+
+        # Total loss
+        loss = mse_f + mse_ic + mse_bc
+
+        # 5. Reset gradients
         opt_net.zero_grad()
-        opt_lam.zero_grad()
+        opt_col.zero_grad()
+        opt_u.zero_grad()
+
+        # 6. Calculate gradients
         loss.backward()
-        for lam in (lam_f, lam_ic, lam_bc):         # flip sign: ascent on weights
-            lam.grad.neg_()
+
+        # 7. Gradient ascent for adaptive weights
+        col_weights.grad.neg_()
+        u_weights.grad.neg_()
+
+        # 8. Gradient descent for network
         opt_net.step()
-        opt_lam.step()
+
+        # 9. Gradient ascent for adaptive weights
+        opt_col.step()
+        opt_u.step()
+
     return net
 
 
