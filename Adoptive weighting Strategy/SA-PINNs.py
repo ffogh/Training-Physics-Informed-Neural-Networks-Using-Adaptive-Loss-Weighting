@@ -1,4 +1,3 @@
-
 def train_sapinn(net, x_f, x_ic, u_ic, x_bc):
 
     # 1. Initialize self-adaptive weights
