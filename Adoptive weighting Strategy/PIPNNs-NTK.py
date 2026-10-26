@@ -42,17 +42,6 @@ def train_pipnns_ntk(net, x_f, x_ic, u_ic, x_bc):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 For PIPNNs-NTK, we adopt only its NTK-based loss-weighting rule and apply it to a single network, since our benchmark is a single-domain 
 forward problem; domain decomposition, sensor-data and interface losses, and parameter identification are therefore omitted, so that all 
 methods share the same network and optimizer. Because computing the NTK requires one backward pass per training point, evaluating it over 
