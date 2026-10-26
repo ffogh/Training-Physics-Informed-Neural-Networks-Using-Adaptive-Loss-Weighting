@@ -77,3 +77,7 @@ methods to maintain consistent optimization conditions and computational budgets
 
 SA-PINN improves training on challenging PDEs, such as Allen–Cahn.
 The paper mensioned “In our implementation of SA-PINNs, we use Tensorflow
+
+For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
+All methods were trained using the Adam optimizer under identical network architectures, training budgets, and experimental conditions.  
+We adopted the default hyperparameters reported in the original papers for all methods, without performing any additional hyperparameter tuning.
