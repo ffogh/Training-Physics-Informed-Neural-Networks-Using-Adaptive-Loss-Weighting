@@ -19,4 +19,8 @@ def train_vwpinn(net, x_f, x_ic, u_ic, x_bc):
 Our VW-PINN implementation follows the original KDE-based volume-weighting formulation. However, we use Adam instead of the original 
 Adam–L-BFGS training procedure to ensure a consistent comparison across methods. Additionally, KDE bandwidth is selected automatically using Scott's rule. 
 
-wE COULD NOT FIND ANY CODE RELATED.
+WE COULD NOT FIND ANY CODE RELATED.
+
+For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
+All methods were trained using the Adam optimizer under identical network architectures, training budgets, and experimental conditions.  
+We adopted the default hyperparameters reported in the original papers for all methods, without performing any additional hyperparameter tuning.
