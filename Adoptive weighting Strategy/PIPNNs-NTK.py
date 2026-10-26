@@ -59,3 +59,6 @@ methods share the same network and optimizer. Because computing the NTK requires
 all 6,144 training points at every iteration would cost roughly 6×10⁷ additional backward passes, about 6,000 times the training cost of a 
 standard PINN. Following Wang et al. (2022), we therefore estimate each NTK block trace from 64 randomly sampled points per loss term and 
 update the weights every 100 epochs, which reduces this overhead by a factor of about 3,200 while preserving the weighting rule
+(For fairness and computational cost, PIPNNs-NTK is applied on a single domain (m = n = 1), so that all methods share the same network and training budget.)
+
+
