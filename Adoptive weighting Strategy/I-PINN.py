@@ -14,3 +14,8 @@ For a fair comparison across 13 PDE benchmarks, we implemented I-PINN using its 
 We did not incorporate the improved neural network architecture proposed in the original paper, as our objective 
 was to compare adaptive loss weighting methods independently of architectural modifications. 
 All methods therefore employed the same network architecture and Adam-only optimization protocol to ensure consistent experimental conditions.
+
+
+    For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
+All methods were trained using the Adam optimizer under identical network architectures, training budgets, and experimental conditions.  
+We adopted the default hyperparameters reported in the original papers for all methods, without performing any additional hyperparameter tuning.
