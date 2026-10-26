@@ -8,7 +8,6 @@
     VW-PINN        L2RE=6.749e-03  MSE=4.035e-05  (669.8s)
     PIPNNs-NTK     L2RE=1.901e-02  MSE=3.203e-04  (22150.6s)
     DB-PINN        L2RE=6.157e-03  MSE=3.359e-05  (1293.2s)
-    wbPINN         L2RE=4.155e-03  MSE=1.530e-05  (703.9s)
   repeat 2/3
     Regular PINN   L2RE=4.429e-03  MSE=1.738e-05  (695.3s)
     SA-PINNs       L2RE=4.636e-03  MSE=1.904e-05  (642.6s)
@@ -18,7 +17,6 @@
     VW-PINN        L2RE=7.999e-03  MSE=5.669e-05  (612.8s)
     PIPNNs-NTK     L2RE=1.896e-02  MSE=3.186e-04  (21714.0s)
     DB-PINN        L2RE=6.620e-03  MSE=3.883e-05  (1477.2s)
-    wbPINN         L2RE=4.872e-03  MSE=2.103e-05  (910.0s)
   repeat 3/3
     Regular PINN   L2RE=6.093e-03  MSE=3.289e-05  (891.0s)
     SA-PINNs       L2RE=6.966e-03  MSE=4.299e-05  (919.6s)
@@ -28,4 +26,4 @@
     VW-PINN        L2RE=5.011e-03  MSE=2.225e-05  (718.2s)
     PIPNNs-NTK     L2RE=3.570e-02  MSE=1.129e-03  (21462.5s)
     DB-PINN        L2RE=8.139e-03  MSE=5.869e-05  (1183.0s)
-    wbPINN         L2RE=1.071e-02  MSE=1.016e-04  (616.4s)
+    
