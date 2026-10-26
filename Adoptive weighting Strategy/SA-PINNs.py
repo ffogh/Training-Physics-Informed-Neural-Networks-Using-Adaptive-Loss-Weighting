@@ -75,4 +75,5 @@ methods to maintain consistent optimization conditions and computational budgets
 
 ''''''''In some case, these are followed by another fixed number of iterations of the L-BFGS quasi-newton method.''''''
 
-SA-PINN uses adaptive loss weighting to improve training on challenging PDEs, such as Allen–Cahn.
+SA-PINN improves training on challenging PDEs, such as Allen–Cahn.
+The paper mensioned “In our implementation of SA-PINNs, we use Tensorflow
