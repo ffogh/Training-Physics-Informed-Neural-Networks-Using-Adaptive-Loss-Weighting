@@ -50,3 +50,8 @@ Page 3, right column, Section 3.1 “Inter-Balancing Between PDE Residual Loss a
 followed by Eq. (4):
 
 G = Σᵢ max{|∇θLᵣ|} / |∇θλᵢLᵢ| (with a bar over the denominator)
+
+
+For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
+All methods were trained using the Adam optimizer under identical network architectures, training budgets, and experimental conditions.  
+We adopted the default hyperparameters reported in the original papers for all methods, without performing any additional hyperparameter tuning.
