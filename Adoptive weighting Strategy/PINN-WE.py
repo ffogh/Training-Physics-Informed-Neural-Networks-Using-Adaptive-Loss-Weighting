@@ -23,3 +23,4 @@ def train_gwpinn(net, x_f, x_ic, u_ic, x_bc):
         opt.step()
     return net
 # Detachment was tested in some cases, but better results were obtained without it.
+We did not find any codes for this method. 
