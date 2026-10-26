@@ -39,5 +39,8 @@ Device: cpu | SMOKE=False | epochs=10000 | repeats=3 | m=[1, 2, 3]
     PIPNNs-NTK     L2RE=6.066e-03  MSE=9.017e-06  (4256.0s)
     DB-PINN        L2RE=3.518e-03  MSE=3.033e-06  (3348.0s)
    
- 
+ Each repeat uses a different network initialization and a newly sampled set of collocation and boundary points, while 
+all methods within a repeat share the same initialization and points. Varying both across repeats ensures that the reported 
+mean and standard deviation reflect robustness to random initialization and point sampling rather than a single favorable configuration, 
+while sharing them within a repeat ensures that differences between methods arise solely from the loss-weighting strategy.
 
