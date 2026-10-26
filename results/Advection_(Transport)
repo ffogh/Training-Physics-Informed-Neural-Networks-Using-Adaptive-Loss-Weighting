@@ -1,5 +1,4 @@
-Architecture 4x128  (4 hidden x 128) ===
-  m=2  repeat 1/3  (c=1.000)
+m=2  repeat 1/3  (c=1.000)
     Regular PINN   L2RE=1.547e-02  MSE=1.196e-04  (365.5s)
     SA-PINNs       L2RE=1.112e-02  MSE=6.183e-05  (387.0s)
     APINNs         L2RE=3.105e-03  MSE=4.819e-06  (359.1s)
@@ -29,5 +28,4 @@ Architecture 4x128  (4 hidden x 128) ===
     PIPNNs-NTK     L2RE=1.765e-02  MSE=1.558e-04  (7776.3s)
     DB-PINN        L2RE=1.758e-02  MSE=1.545e-04  (462.1s)
     wbPINN         L2RE=1.469e-02  MSE=1.079e-04  (272.5s)
- 
 
