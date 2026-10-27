@@ -29,5 +29,5 @@
 
 
 
-In the third repeat, PIPNNs-NTK, DB-PINN and wbPINN were rerun after the run was stopped; 
+In the third repeat, PIPNNs-NTK, DB-PINN  were rerun after the run was stopped; 
 their times are therefore excluded from the time averages, which are computed over repeats 1–2.
