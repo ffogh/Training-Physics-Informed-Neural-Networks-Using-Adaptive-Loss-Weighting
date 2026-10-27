@@ -40,13 +40,6 @@ IC = "u(x,0) = sin(m*pi*x)"
 BC_LEFT = "u(0,t) = 0"
 BC_RIGHT = "u(1,t) = 0"
 
-# NTK Settings
-NTK_FREQ = 1
-N_NTK = 64
-
-# APINN Settings
-APINN_FREQ = 100
-APINN_WIN = 100
 
 # Random Seeds
 NETWORK_SEEDS = [0, 1, 2]
@@ -56,3 +49,9 @@ COLLOCATION_SEEDS = {
     2: [1200, 1201, 1202],
     3: [1300, 1301, 1302]
 }
+
+
+For each seed, the neural network initialization, interior collocation points, initial-condition points, and boundary points change 
+to assess robustness and reduce dependence on random initialization and sampling. The PDE coefficients (\(D=0.01\), \(R=0.05\)), mode (\(m=1\)), 
+initial and boundary conditions, architecture, training configuration, analytical solution, and evaluation grid remain fixed. 
+All nine methods use the same training points and network initialization within each repetition, ensuring a controlled comparison.
