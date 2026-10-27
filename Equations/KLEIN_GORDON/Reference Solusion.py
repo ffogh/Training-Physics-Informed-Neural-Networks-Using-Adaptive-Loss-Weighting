@@ -5,6 +5,14 @@ def get_reference(k):
     gx,gt=np.meshgrid(x,t,indexing="ij");return gx,gt,exact_solution(gx,gt,k)
 
 
+# Fourier Features
+USE_FOURIER = True
+N_FOURIER = 20
+FOURIER_FREQUENCIES = "linspace(1, 15, 20)"
+FOURIER_INPUT_DIM = 82
+
+
+
 
 class FourierFeatures2D(nn.Module):
     def forward(self,xt):
