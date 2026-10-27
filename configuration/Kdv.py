@@ -20,6 +20,9 @@ NT_EVAL = 200    # Total evaluation points = 40,000
 # Reference Solver
 NX_SPEC = 512
 NT_REF = 500
+SOLVER = "DOP853"
+RTOL = 1e-9
+ATOL = 1e-11
 
 # PDE Parameters
 ALPHA = 1.0
@@ -32,6 +35,8 @@ X_LEFT = -1.0
 X_RIGHT = 1.0
 T_FINAL = 1.0
 
-# NTK Settings
-NTK_FREQ = 1
-N_NTK = 64
+
+
+# Random Seeds
+COLLOCATION_SEEDS = [1000, 1001, 1002]
+NETWORK_SEEDS = [0, 1, 2]
