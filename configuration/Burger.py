@@ -41,7 +41,8 @@ for rep in range(REPEATS):
 
 
 
-The code changes the collocation points between repetitions, but keeps them identical for all methods within the same repetition.
+The code changes the collocation points between repetitions, but keeps them identical for all methods within the same repetition. 
+The code also changes the network initialization between repetitions.
 
 
 
