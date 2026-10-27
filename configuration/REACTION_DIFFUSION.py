@@ -55,3 +55,10 @@ For each seed, the neural network initialization, interior collocation points, i
 to assess robustness and reduce dependence on random initialization and sampling. The PDE coefficients (\(D=0.01\), \(R=0.05\)), mode (\(m=1\)), 
 initial and boundary conditions, architecture, training configuration, analytical solution, and evaluation grid remain fixed. 
 All nine methods use the same training points and network initialization within each repetition, ensuring a controlled comparison.
+
+
+
+
+
+
+    
