@@ -32,6 +32,17 @@ X_LEFT = -1.0
 X_RIGHT = 1.0
 T_FINAL = 1.0
 
+for rep in range(REPEATS):
+    xf, xic, uic, xbc = make_points(seed=1000+rep+int(nu*10000))
+
+    for name, train_fn in METHODS.items():
+        net = build_net(n_layers, width, seed=rep)
+        net = train_fn(net, xf, xic, uic, xbc, nu)
+
+
+
+The code changes the collocation points between repetitions, but keeps them identical for all methods within the same repetition.
+
 
 
 
