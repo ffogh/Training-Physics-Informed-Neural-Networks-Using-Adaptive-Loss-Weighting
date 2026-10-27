@@ -1,0 +1,33 @@
+== Architecture 5x128  (5 hidden x 128) ===
+  repeat 1/3: nu=0.0077, kx=[4.0, 4.0, 1.0, 4.0], ky=[3.0, 1.0, 2.0, 2.0]
+/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:869: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /pytorch/aten/src/ATen/cuda/CublasHandlePool.cpp:335.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+    Regular PINN   L2RE=3.594e-02  MSE=1.510e-05  (124.4s)
+    SA-PINNs       L2RE=2.384e-02  MSE=6.643e-06  (125.3s)
+    APINNs         L2RE=7.324e-02  MSE=6.270e-05  (119.2s)
+    I-PINN         L2RE=1.227e-02  MSE=1.759e-06  (122.0s)
+    GW-PINN        L2RE=2.621e-02  MSE=8.031e-06  (122.4s)
+    VW-PINN        L2RE=5.671e-02  MSE=3.758e-05  (130.2s)
+    PIPNNs-NTK     L2RE=6.215e-02  MSE=4.514e-05  (4053.3s)
+    DB-PINN        L2RE=6.795e-02  MSE=5.398e-05  (216.6s)
+    wbPINN         L2RE=4.211e-02  MSE=2.073e-05  (131.5s)
+  repeat 2/3: nu=0.0091, kx=[2.0, 2.0, 3.0, 3.0], ky=[4.0, 1.0, 1.0, 3.0]
+    Regular PINN   L2RE=1.420e-02  MSE=2.534e-05  (127.2s)
+    SA-PINNs       L2RE=1.554e-02  MSE=3.032e-05  (133.5s)
+    APINNs         L2RE=5.271e-02  MSE=3.490e-04  (127.7s)
+    I-PINN         L2RE=2.712e-02  MSE=9.238e-05  (130.4s)
+    GW-PINN        L2RE=7.121e-03  MSE=6.368e-06  (131.6s)
+    VW-PINN        L2RE=8.465e-03  MSE=8.998e-06  (129.1s)
+    PIPNNs-NTK     L2RE=4.679e-02  MSE=2.749e-04  (4044.5s)
+    DB-PINN        L2RE=6.117e-02  MSE=4.698e-04  (216.1s)
+    wbPINN         L2RE=6.122e-03  MSE=4.707e-06  (129.8s)
+  repeat 3/3: nu=0.0024, kx=[2.0, 4.0, 3.0, 1.0], ky=[1.0, 1.0, 1.0, 1.0]
+    Regular PINN   L2RE=9.079e-03  MSE=2.822e-05  (127.9s)
+    SA-PINNs       L2RE=2.006e-02  MSE=1.378e-04  (133.8s)
+    APINNs         L2RE=2.129e-02  MSE=1.552e-04  (128.8s)
+    I-PINN         L2RE=1.835e-02  MSE=1.153e-04  (129.3s)
+    GW-PINN        L2RE=7.204e-03  MSE=1.777e-05  (130.7s)
+    VW-PINN        L2RE=4.588e-03  MSE=7.209e-06  (128.7s)
+    PIPNNs-NTK     L2RE=4.051e-02  MSE=5.618e-04  (4559.7s)
+    DB-PINN        L2RE=6.712e-03  MSE=1.543e-05  (2278.2s)
+    wbPINN         L2RE=5.648e-03  MSE=1.092e-05  (1208.4s)
