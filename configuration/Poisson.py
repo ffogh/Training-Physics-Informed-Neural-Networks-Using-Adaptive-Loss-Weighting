@@ -38,3 +38,6 @@ COLLOCATION_SEEDS = {
     3: [1300, 1301, 1302]
 }
 NETWORK_SEEDS = [0, 1, 2]
+
+Collocation points change between repetitions and frequencies but remain fixed throughout training. 
+All nine methods share the same points and network initialization within each repetition.
