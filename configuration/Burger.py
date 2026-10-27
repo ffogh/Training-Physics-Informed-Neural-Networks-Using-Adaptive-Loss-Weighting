@@ -32,10 +32,6 @@ X_LEFT = -1.0
 X_RIGHT = 1.0
 T_FINAL = 1.0
 
-# NTK Settings
-NTK_FREQ = 1
-N_NTK = 64
 
-# APINN Settings
-APINN_FREQ = 100
-APINN_WIN = 100
+
+
