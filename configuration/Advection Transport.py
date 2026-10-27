@@ -47,3 +47,17 @@ COLLOCATION_SEEDS = {
     2: [1200, 1201, 1202],
     3: [1300, 1301, 1302]
 }
+
+
+For each seed, the neural network initialization, interior collocation points, initial-condition points, and periodic boundary points 
+change to assess robustness and reduce dependence on random initialization and sampling. The PDE coefficient (\(c=1\)), initial and boundary 
+conditions, architecture, training configuration, analytical solution, and evaluation grid remain fixed. 
+All nine methods use the same training points and network initialization within each repetition, ensuring a controlled comparison.
+
+
+
+
+
+
+
+    
