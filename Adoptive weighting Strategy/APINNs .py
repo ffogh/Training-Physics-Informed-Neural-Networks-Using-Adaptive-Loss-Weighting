@@ -17,7 +17,7 @@ def train_apinn(net, x_f, x_ic, u_ic, x_bc):
     return net
 
 
-For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
+''For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
 All methods were trained using the Adam optimizer under identical network architectures, training budgets, and experimental conditions.  
 We adopted the default hyperparameters reported in the original papers for all methods, without performing any additional hyperparameter tuning.
 
@@ -36,4 +36,4 @@ max(MSEu0 ,MSElb,MSEub,MSEf )−min(MSEu0 ,MSElb,MSEub,MSEf )
 8: calculate λi = 1 + αnormi
 9: end while
 10: end while
-11: return λi
+11: return λi''
