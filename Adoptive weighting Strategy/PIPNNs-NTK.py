@@ -42,17 +42,17 @@ def train_pipnns_ntk(net, x_f, x_ic, u_ic, x_bc):
 
 
 
-For PIPNNs-NTK, we adopt only its NTK-based loss-weighting rule and apply it to a single network, since our benchmark is a single-domain 
-forward problem; domain decomposition, sensor-data and interface losses, and parameter identification are therefore omitted, so that all 
-methods share the same network and optimizer. Because computing the NTK requires one backward pass per training point, evaluating it over 
-all 6,144 training points at every iteration would cost roughly 6×10⁷ additional backward passes, about 6,000 times the training cost of a 
-standard PINN. Following Wang et al. (2022), we therefore estimate each NTK block trace from 64 randomly sampled points per loss term and 
-update the weights every 100 epochs, which reduces this overhead by a factor of about 3,200 while preserving the weighting rule
-(For fairness and computational cost, PIPNNs-NTK is applied on a single domain (m = n = 1), so that all methods share the same network and training budget.)
+#For PIPNNs-NTK, we adopt only its NTK-based loss-weighting rule and apply it to a single network, since our benchmark is a single-domain 
+#forward problem; domain decomposition, sensor-data and interface losses, and parameter identification are therefore omitted, so that all 
+#methods share the same network and optimizer. Because computing the NTK requires one backward pass per training point, evaluating it over 
+#all 6,144 training points at every iteration would cost roughly 6×10⁷ additional backward passes, about 6,000 times the training cost of a 
+#standard PINN. Following Wang et al. (2022), we therefore estimate each NTK block trace from 64 randomly sampled points per loss term and 
+#update the weights every 100 epochs, which reduces this overhead by a factor of about 3,200 while preserving the weighting rule
+#(For fairness and computational cost, PIPNNs-NTK is applied on a single domain (m = n = 1), so that all methods share the same network and training budget.)
 
 
-For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
-All methods were trained using the Adam optimizer under identical network architectures, training budgets, and experimental conditions.  
-We adopted the default hyperparameters reported in the original papers for all methods, without performing any additional hyperparameter tuning.
+#For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
+#All methods were trained using the Adam optimizer under identical network architectures, training budgets, and experimental conditions.  
+#We adopted the default hyperparameters reported in the original papers for all methods, without performing any additional hyperparameter tuning.
 
 
