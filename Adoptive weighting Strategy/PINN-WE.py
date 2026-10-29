@@ -20,6 +20,30 @@ def train_gwpinn(net, x_f, x_ic, u_ic, x_bc):
         loss.backward()
         opt.step()
     return net
+
+#detached
+def train_gwpinn(net, x_f, x_ic, u_ic, x_bc):
+
+    opt = torch.optim.Adam(net.parameters(), lr=LR)
+
+    for _ in range(EPOCHS):
+        opt.zero_grad()
+
+        r, d = residual(net, x_f)  # r: PDE residual, d: u_x + u_y
+
+        # Compute adaptive weights and detach them from the gradient graph
+        w = (1.0 / (GW_EPS2 * (torch.abs(d) - d) + 1.0)).detach()
+
+        loss = (
+            torch.mean(w * r ** 2)
+            + ic_loss(net, x_ic, u_ic)
+            + bc_loss(net, x_bc)
+        )
+
+        loss.backward()
+        opt.step()
+
+    return net
     
 #Kapoor et al. do not specify whether gradients propagate through the weight ω. We therefore tested both variants, with ω detached (treated as a constant at each iteration) 
 #and without detaching it; since the non-detached variant gave lower errors, it was used in all experiments.
