@@ -1,4 +1,4 @@
-r= Architecture 4x128 (4 hidden x 128) ===
+
   nu=0.05  repeat 1/3
     Regular PINN   L2RE=2.535e-03  MSE=1.742e-06  (1965.0s)
     SA-PINNs       L2RE=2.242e-03  MSE=1.363e-06  (1963.2s)
