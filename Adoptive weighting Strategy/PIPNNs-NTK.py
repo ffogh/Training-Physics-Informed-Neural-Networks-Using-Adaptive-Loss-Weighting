@@ -55,8 +55,7 @@ def train_pipnns_ntk(net, x_f, x_ic, u_ic, x_bc):
 #All methods were trained using the Adam optimizer under identical network architectures, training budgets, and experimental conditions.  
 #We adopted the default hyperparameters reported in the original papers for all methods, without performing any additional hyperparameter tuning.
 #To reduce the computational cost, the NTK-based weights of PIPNNs-NTK are
-#updated every 100 epochs, and each trace is estimated from 64 randomly sampled
-#points.
+#updated every  Iteration (epochs). 
 
 #PIPNNs-NTK gives each part of the loss (residual, initial condition, boundary condition) its own weight. Following Zhang et al., the weight of part l is:
 
