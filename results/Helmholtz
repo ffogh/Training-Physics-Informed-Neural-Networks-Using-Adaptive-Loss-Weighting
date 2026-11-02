@@ -1,4 +1,4 @@
-Architecture 4x128  (4 hidden x 128) ===
+
   k=8  repeat 1/3
     Regular PINN   L2RE=2.799e-01  MSE=1.939e-02  (1279.3s)
     SA-PINNs       L2RE=2.810e-01  MSE=1.955e-02  (1269.0s)
