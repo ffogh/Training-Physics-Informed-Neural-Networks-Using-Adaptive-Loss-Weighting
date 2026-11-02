@@ -58,4 +58,12 @@ def train_pipnns_ntk(net, x_f, x_ic, u_ic, x_bc):
 #updated every 100 epochs, and each trace is estimated from 64 randomly sampled
 #points.
 
+#PIPNNs-NTK gives each part of the loss (residual, initial condition, boundary condition) its own weight. Following Zhang et al., the weight of part l is:
+
+#β_l = (N_l / N) × (Tr(K) / Tr(K_ll))
+
+#K_ll is the NTK (neural tangent kernel) block of part l. Its trace, Tr(K_ll), measures how fast that part of the loss is being learned.
+#Tr(K) is the sum of the traces of all parts.
+#N_l is the number of points in part l, and N is the total number of points.
+
 
