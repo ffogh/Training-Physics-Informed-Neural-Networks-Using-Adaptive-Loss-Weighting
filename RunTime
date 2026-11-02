@@ -1,5 +1,4 @@
-ABLE XIII: Average runtime (seconds) over three independent runs (mean ± standard deviation) for all methods on each
-benchmark equation.
+
 Equation         RegularPINN           SA-PINNs            APINNs             I-PINN            PINN-WE           VW-PINN          PIPNNs-NTK         DB-PINN 
 Adv.Trans.       323.7+43.7            364.3+37.2          349.6+37.3         332.4+49.0        336.9+49.9        333.3+48.3       6804.8+942.1       498.8+52.9 
 KdV              1668.1±180.6          1607.2±196.4        1435.0±73.0        1223.5±88.6       1235.1±107.2      1319.1±222.2     24354.7±1254.8     2876.9±438.7  
