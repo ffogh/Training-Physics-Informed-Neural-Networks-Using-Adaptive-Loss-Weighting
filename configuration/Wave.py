@@ -45,6 +45,6 @@ COLLOCATION_SEEDS = [1000, 1001, 1002]
 NETWORK_SEEDS = [0, 1, 2]
 
 
-For each seed, the neural network initialization, interior collocation points, initial-condition points, and boundary points change to 
-assess robustness and reduce dependence on random initialization and sampling. The PDE parameters,
-wave speed, initial and boundary conditions, architecture, training configuration, analytical solution, and evaluation grid remain fixed.
+#For each seed, the neural network initialization, interior collocation points, initial-condition points, and boundary points change to 
+#assess robustness and reduce dependence on random initialization and sampling. The PDE parameters,
+#wave speed, initial and boundary conditions, architecture, training configuration, analytical solution, and evaluation grid remain fixed.
