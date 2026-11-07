@@ -26,9 +26,11 @@ def train_pipnns_ntk(net, x_f, x_ic, u_ic, x_bc):
             e_bc = net(x_bc[idx_bc]).flatten()
 
             errors = (e_f, e_ic, e_bc)
-            n = torch.tensor([float(e.numel()) for e in errors], device=DEVICE)
+            n = torch.tensor([float(e.numel()) for e in errors], device=DEVICE)          # sampled counts
+            N_full = torch.tensor([float(N_F), float(N_IC), float(N_BC)], device=DEVICE)  # full counts
             tr = torch.stack([_ntk_trace(e.unbind(), params) for e in errors])
-            beta = ((n / n.sum()) * (tr.sum() / (tr + 1e-12))).detach()
+            tr_full = tr * (N_full / n)                                                   # scale to full sets
+            beta = ((N_full / N_full.sum()) * (tr_full.sum() / (tr_full + 1e-12))).detach()
 
         opt.zero_grad()
         terms = torch.stack(all_losses(net, x_f, x_ic, u_ic, x_bc))
