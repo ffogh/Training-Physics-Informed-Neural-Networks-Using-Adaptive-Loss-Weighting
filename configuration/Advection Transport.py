@@ -32,6 +32,7 @@ M_VALUES = [1, 2, 3]
 X_DOMAIN = (0.0, 1.0)
 T_DOMAIN = (0.0, 1.0)
 
+m=2
 # Initial Condition
 IC = "u(x,0) = sin(m*pi*x)"
 
