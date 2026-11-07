@@ -19,7 +19,7 @@ NT = 100        # Total evaluation points = 10,000
 
 # Reference Solution
 REFERENCE = "Analytical"
-EXACT_SOLUTION = "sin(m*pi*(x-C*t))"
+EXACT_SOLUTION = "sin(2*m*pi*(x-C*t))"
 
 # PDE
 EQUATION = "u_t + C*u_x = 0"
