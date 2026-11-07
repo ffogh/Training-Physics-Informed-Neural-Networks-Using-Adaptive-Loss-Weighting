@@ -12,7 +12,8 @@ def residual_pointwise(net, xt, m):
 def condition_loss(net, x_ic, x_left, x_right, m):
     """Combined IC + periodic boundary loss, treated as one condition term."""
     x = x_ic[:, 0:1]
-    u_ic_target = torch.sin(m * np.pi * x)
+    #u_ic_target = torch.sin(m * np.pi * x)
+    u_ic_target = torch.sin(2 * m * np.pi * x)
     L_ic = torch.mean((net(x_ic) - u_ic_target) ** 2)
     L_per = torch.mean((net(x_left) - net(x_right)) ** 2)
     return L_ic + L_per
