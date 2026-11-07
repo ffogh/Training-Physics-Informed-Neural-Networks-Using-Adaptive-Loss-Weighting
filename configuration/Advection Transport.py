@@ -34,7 +34,8 @@ T_DOMAIN = (0.0, 1.0)
 
 
 # Initial Condition
-IC = "u(x,0) = sin(m*pi*x)"
+IC = "u(x,0) = sin(2*m*pi*x)"
+
 
 
 # Boundary Condition
