@@ -26,9 +26,26 @@ def ic_loss(net, x_ic, u_ic_tgt, v_ic_tgt):
           + torch.mean((out[:, 1:2] - v_ic_tgt) ** 2))
 
 
+
+
 def bc_loss(net, x_bc_l, x_bc_r):
-    """Periodic BC: match both u and v at boundaries (forward pass only)."""
-    return torch.mean((net(x_bc_l) - net(x_bc_r)) ** 2)
+    """Periodic BC: match u, v and their x-derivatives at both ends."""
+    xl = x_bc_l.clone().requires_grad_(True)
+    xr = x_bc_r.clone().requires_grad_(True)
+    ol, orr = net(xl), net(xr)
+    L_val = torch.mean((ol - orr) ** 2)
+    L_der = 0.0
+    for k in range(2):  # k=0: u, k=1: v
+        gl = torch.autograd.grad(ol[:, k:k+1], xl, torch.ones_like(ol[:, k:k+1]),
+                                 create_graph=True)[0][:, 0:1]
+        gr = torch.autograd.grad(orr[:, k:k+1], xr, torch.ones_like(orr[:, k:k+1]),
+                                 create_graph=True)[0][:, 0:1]
+        L_der = L_der + torch.mean((gl - gr) ** 2)
+    return L_val + L_der
+
+
+
+
 
 
 def all_losses(net, x_f, x_ic, u_ic, v_ic, x_bc_l, x_bc_r):
