@@ -44,7 +44,7 @@ BC_RIGHT = "u(1,t) = 0"
 NETWORK_SEEDS = [0, 1, 2]
 COLLOCATION_SEEDS = [1000, 1001, 1002]
 
-For each seed, the neural network initialization, interior collocation points, initial-condition points, and boundary points change 
-to assess robustness and reduce dependence on random initialization and sampling. The PDE parameters, wave speed, initial and boundary 
-conditions, architecture, training configuration, analytical solution, and evaluation grid remain fixed. 
-All nine methods use the same training points and network initialization within each repetition, ensuring a controlled comparison.
+#For each seed, the neural network initialization, interior collocation points, initial-condition points, and boundary points change 
+#to assess robustness and reduce dependence on random initialization and sampling. The PDE parameters, wave speed, initial and boundary 
+#conditions, architecture, training configuration, analytical solution, and evaluation grid remain fixed. 
+#All nine methods use the same training points and network initialization within each repetition, ensuring a controlled comparison.
