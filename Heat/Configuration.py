@@ -23,7 +23,9 @@ GW_EPS2 = 1.0                            # GW-PINN: gradient sensitivity
 
 
 
-L2RE and MSE give identical method rankings when evaluated
+
+
+#L2RE and MSE give identical method rankings when evaluated
 # on the same PDE instance and evaluation grid.
 #
 # However, their rankings may differ after averaging results
