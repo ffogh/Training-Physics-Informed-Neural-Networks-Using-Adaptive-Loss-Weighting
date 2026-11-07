@@ -1,6 +1,6 @@
 
 def exact_solution(x, t, m):
-    return np.sin(m * np.pi * (x - C * t))
+    return np.sin(2 * m * np.pi * (x - C * t))
 
 
 def get_reference(m):
