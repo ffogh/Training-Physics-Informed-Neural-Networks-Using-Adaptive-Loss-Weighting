@@ -35,11 +35,6 @@ def ic_loss(net, x_ic, u_ic_tgt, v_ic_tgt):
           + torch.mean((out[:, 1:2] - v_ic_tgt) ** 2))
 
 
-def bc_loss(net, x_bc_l, x_bc_r):
-    """Periodic BC: match both u and v at boundaries (forward pass only)."""
-    return torch.mean((net(x_bc_l) - net(x_bc_r)) ** 2)
-
-
 
 
 def bc_loss(net, x_bc_l, x_bc_r):
