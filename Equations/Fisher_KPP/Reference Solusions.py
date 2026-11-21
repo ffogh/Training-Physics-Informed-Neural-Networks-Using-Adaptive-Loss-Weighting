@@ -1,7 +1,5 @@
 
-# ================================================================== #
-# 1.  NUMERICAL REFERENCE SOLUTION  (method of lines, Radau)         #
-# ================================================================== #
+
 def build_reference():
     """Solve Fisher-KPP on a fine grid and return an interpolator."""
     from scipy.integrate import solve_ivp
