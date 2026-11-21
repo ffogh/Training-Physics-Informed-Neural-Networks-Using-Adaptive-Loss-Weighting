@@ -22,8 +22,7 @@ def train_gwpinn(net, x_f, x_ic, u_ic, x_bc):
 
     return net
     
-#Kapoor et al. do not specify whether gradients propagate through the weight ω. We therefore tested both variants, with ω detached (treated as a constant at each iteration) 
-#and without detaching it.
+
 #We did not find any codes for this method. 
 
 #For a fair and computationally consistent comparison, we adapted the methods to a unified experimental framework while accounting for their computational costs.  
